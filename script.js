@@ -75,40 +75,38 @@
         }
     }
     function changeBackgroundVideo(weather) {
-        const video = document.getElementById('bg-video');
-        let videoSrc;
+    const video = document.getElementById('bg-video');
+    let videoSrc;
 
-        switch (weather) {
-            case 'rain':
-            case 'drizzle':
-                videoSrc = 'https://videos.pexels.com/video-files/7681543/7681543-sd_360_640_24fps.mp4'; 
-                
-                break;
-            case 'clear':
-                videoSrc = 'https://videos.pexels.com/video-files/1309214/1309214-hd_1920_1080_30fps.mp4'; 
-                break;
-            case 'clouds':
-                videoSrc = 'https://videos.pexels.com/video-files/1893623/1893623-uhd_2560_1440_25fps.mp4'; 
-                break;
-            case 'snow':
-                videoSrc = 'https://videos.pexels.com/video-files/856381/856381-hd_1920_1080_30fps.mp4';
-                break;
-            case 'thunderstorm':
-                videoSrc = 'https://videos.pexels.com/video-files/3433955/3433955-uhd_2732_1440_24fps.mp4'; 
-                break;
-            default:
-                videoSrc = "https://videos.pexels.com/video-files/855005/855005-hd_1920_1080_30fps.mp4";
-                break;
-        }
-
-        if (videoSrc !== video.src) { 
-            video.src = videoSrc;
-            video.load(); 
-            video.play();
-        }
+    switch (weather) {
+        case 'rain':
+        case 'drizzle':
+            videoSrc = 'https://videos.pexels.com/video-files/7681543/7681543-sd_360_640_24fps.mp4'; 
+            break;
+        case 'clear':
+            videoSrc = 'https://videos.pexels.com/video-files/1309214/1309214-hd_1920_1080_30fps.mp4'; 
+            break;
+        case 'clouds':
+            videoSrc = 'https://videos.pexels.com/video-files/1893623/1893623-uhd_2560_1440_25fps.mp4'; 
+            break;
+        case 'snow':
+            videoSrc = 'https://videos.pexels.com/video-files/856381/856381-hd_1920_1080_30fps.mp4';
+            break;
+        case 'thunderstorm':
+            videoSrc = 'https://videos.pexels.com/video-files/3433955/3433955-uhd_2732_1440_24fps.mp4'; 
+            break;
+        default:
+            videoSrc = "https://videos.pexels.com/video-files/855005/855005-hd_1920_1080_30fps.mp4"; 
+            break;
     }
 
-
+    if (videoSrc !== video.src) {
+        video.src = videoSrc;
+        video.load(); 
+    }
+    
+    video.play();  
+}
     document.getElementById('searchButton').addEventListener('click', getWeather);
 
 
